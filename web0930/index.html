@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>Task</title>
+</head>
+<body>
+    <p>
+        <img src = "images/edit.png" align="middle">
+        <b>Резюме</b>
+    </p>
+
+    <form action="#">
+
+    <img src = "images/foto.png" align="right">
+    
+    <p>
+        Фамилия: <br>
+        <input type = "text" name="surname" placeholder="Иванов" size="35">
+    </p>
+    
+    <p>
+        Имя: <br>
+        <input type = "text" name="name" placeholder="Иван" size="35">
+    </p>
+
+    <p>
+        Отчество: <br>
+        <input type = "text" name="middleName" placeholder="Иванович" size="35">
+    </p>
+        
+
+     <p>
+        Дата рождения: <br>
+        <input type = "date" name="dateOfBirth" placeholder="дд.мм.гггг">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        Образование: 
+        <select name = "obraz">
+            <option value = "0">Среднее</option>
+            <option value = "1">Высшее</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Пол:
+        <input type = "radio" name="gender" value="w"> женский
+        <input type = "radio" name="gender" value="m"> мужской
+        
+        
+    </p>
+    
+
+    <p>
+        Желаемая зарплата (руб): 
+        <input type = "text" name="salary" placeholder="100000" size="10">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Должность:
+        <input type = "text" name="role" placeholder="Программист" size="35">
+
+
+    </p>
+
+    <p>
+        Дополнительная информация: <br>
+        <textarea name="additionalinfo" rows="6" cols="75"></textarea>
+    </p>
+
+    
+
+    <input type="button" name="send" value="Отправить">
+    </form>
+
+</body>
+
+</html>
