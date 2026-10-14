@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS шрифт</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">CSS</a></li>
+                <li><a href="syntax.html">Синтаксис CSS</a></li>
+                <li><a class="active" href="font.html">CSS шрифт</a></li>
+                <li><a href="blocks.html">Блоки</a></li>
+            </ul>
+        </div>
+
+        <div class="image-section">
+            <div class = "image">
+                <div class="image-wrapper">
+                    <img src="pict/image1.png">
+                </div>
+
+            </div>
+
+            <div class = "image">
+                <div class="image-wrapper">
+                    <img src="pict/image2.png">            
+                </div>
+
+            </div>
+
+            <div class = "image">
+                <div class="image-wrapper">
+                    <img src="pict/image3.png">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-section">
+            <p>
+                <span class="code">font</span>
+                 — универсальное свойство, которое позволяет одновременно задать несколько характеристик. 
+                Чтобы свойство <span class="code">font</span> работало корректно, значения должны указываться в строго определенном порядке:
+            </p>
+
+            <div class="code">
+                селектор {<br>
+                &nbsp;&nbsp;font: [font-style] [font-variant] [font-weight] [font-stretch] [font-size]/[line-height] [font-family];<br>
+                }
+            </div>
+
+            <p>
+                <span class="code">font-style</span> — это свойство в CSS, которое определяет начертание шрифта: обычное, курсивное (italic) или наклонное (oblique). 
+                В основном его используют для того, чтобы выделить текст или отдельные слова в абзаце. Доступные значения:
+            </p>
+
+            <ul>
+                <li><span class="bold">normal</span> (по умолчанию) — обычное (прямое) начертание текста.</li>
+                <li><span class="bold">italic</span> — курсивное начертание.</li>
+                <li><span class="bold">oblique</span> — наклонное начертание.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

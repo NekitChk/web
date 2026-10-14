@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Синтаксис CSS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">CSS</a></li>
+                <li><a class="active" href="syntax.html">Синтаксис CSS</a></li>
+                <li><a href="font.html">CSS шрифт</a></li>
+                <li><a href="blocks.html">Блочное представление</a></li>
+            </ul>
+        </div>
+        
+        <div class="article">
+            <div>
+                Синтаксис CSS состоит из набора правил. Каждое правило состоит из двух
+                основных частей: <b>селектора</b> и <b>блока объявлений</b>. Селектор указывает браузеру,
+                к какому именно элементу на веб-странице нужно применить стиль.
+            </div>
+            <div>
+                <img id="logo" src="pict/image1.png" alt="Синтаксис CSS">
+                Блок объявлений заключается в фигурные скобки <code>{ }</code>. Внутри скобок
+                записываются свойства и их значения, которые разделяются двоеточием, а в конце
+                обязательно ставится точка с запятой (<code>свойство: значение;</code>).
+                Например, чтобы перекрасить текст в красный цвет, мы пишем: <code>color: red;</code>.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

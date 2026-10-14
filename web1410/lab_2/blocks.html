@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 7 CSS блоки</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">CSS</a></li>
+                <li><a href="syntax.html">Синтаксис CSS</a></li>
+                <li><a href="font.html">CSS шрифт</a></li>
+                <li><a class = "active" href="blocks.html">Блоки</a></li>
+            </ul>
+        </div>
+
+         <div class="top-section">
+            
+            <div class="col-big">
+                <div class="col-block text-box">
+                    <p>
+                        Каждый элемент в документе рассматривается браузером как прямоугольный блок. 
+                        Основой блочной вёрстки является понимание того, из чего состоит этот блок:
+                    </p>
+                    <p>
+                        1. <span class="bold">Content</span> — сам контент (текст или изображение).<br>
+                        2. <span class="bold">Padding</span> — внутренний отступ от контента до рамки.<br>
+                        3. <span class="bold">Border</span> — рамка вокруг элемента.<br>
+                        4. <span class="bold">Margin</span> — внешний отступ до соседних элементов.
+                    </p>
+                    <p>
+                        Использование процентных значений для ширины позволяет блокам гибко сжиматься при изменении размеров окна.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-small">
+                <div class="col-block">
+                    <img src="pict/image1.png" alt="Картинка 1">
+                </div>
+                <div class="col-block">
+                    <img src="pict/image2.png" alt="Картинка 2">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom-section">
+            <div class="col-small">
+                <div class="col-block">
+                    <img src="pict/image3.png" alt="Картинка 3">
+                </div>
+            </div>
+            <div class="col-small">
+                <div class="col-block">
+                    <img src="pict/image1.png" alt="Картинка 4">
+                </div>
+            </div>
+            <div class="col-small">
+                <div class="col-block">
+                    <img src="pict/image2.png" alt="Картинка 5">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
