@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница с таблицей</title>
+</head>
+<body>
+
+    <h1>Страница с таблицей</h1>
+
+    <p>
+        <a href="index.html">Главная страница</a><br>
+        <a href="table.html">Список стран мира</a>
+    </p>
+    <hr>
+
+    <details>
+        <summary>График</summary>
+        <form action="#">
+            <p>
+                <b>Значение по оси OX</b><br>
+                <input type="radio" name="ox" id="ox1" value="continent" checked>
+                <label for="ox1">Континент</label><br>
+                <input type="radio" name="ox" id="ox2" value="climate">
+                <label for="ox2">Климатический пояс</label><br>
+                <input type="radio" name="ox" id="ox3" value="currency">
+                <label for="ox3">Валюта</label>
+            </p>
+
+            <p>
+                <b>Значение по оси OY</b><br>
+                <input type="checkbox" name="oy_max" id="oy1">
+                <label for="oy1">Максимальное население</label><br>
+                <input type="checkbox" name="oy_min" id="oy2">
+                <label for="oy2">Минимальное население</label><br>
+                <input type="checkbox" name="oy_count" id="oy3">
+                <label for="oy3">Количество стран</label>
+            </p>
+
+            <p>
+                <input type="button" id="btn_graph" value="Построить">
+            </p>
+            <p>Здесь будет график</p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Фильтр</summary>
+        <form action="#">
+            <p>
+                <label for="f_name">Название:</label>
+                <input type="text" id="f_name" name="country_name">
+            </p>
+
+            <p>
+                <label for="f_continent">Континент:</label>
+                <input type="text" id="f_continent" name="continent">
+            </p>
+
+            <p>
+                <label for="f_climate">Климатический пояс:</label>
+                <select id="f_climate" name="climate">
+                    <option value="">Все</option>
+                    <option value="temperate">Умеренный</option>
+                    <option value="subtropical">Субтропический</option>
+                    <option value="tropical">Тропический</option>
+                    <option value="subequatorial">Субэкваториальный</option>
+                    <option value="equatorial">Экваториальный</option>
+                </select>
+            </p>
+            
+            <p>
+                <label for="f_currency">Денежная единица:</label>
+                <input type="text" id="f_currency" name="currency">
+            </p>
+
+            <p>
+                Население (млн.чел): 
+                <label for="pop_from">от</label> 
+                <input type="number" id="pop_from" name="pop_from" min="5.1" max="1428.6" step="0.1"> 
+                <label for="pop_to">до</label> 
+                <input type="number" id="pop_to" name="pop_to" min="5.1" max="1428.6" step="0.1">
+            </p>
+
+            <p>
+                Площадь (кв.км): 
+                <label for="area_from">от</label> 
+                 <input type="number" id="area_from" name="area_from" min="728" max="17125191"> 
+                <label for="area_to">до</label> 
+                <input type="number" id="area_to" name="area_to" min="728" max="17125191">
+            </p>
+
+            <p>
+                <input type="button" id="btn_filter" value="Найти">
+            </p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Сортировка</summary>
+        <form action="#">
+            <p>
+                <label for="sort1">Первый уровень:</label>
+                <select id="sort1" name="sort1">
+                    <option value="none">Нет</option>
+                    <option value="name">Название</option>
+                    <option value="continent">Континент</option>
+                    <option value="region">Регион</option>
+                    <option value="population">Население</option>
+                    <option value="area">Площадь</option>
+                    <option value="gdp">ВВП</option>
+                    <option value="climate">Климат</option>
+                    <option value="timezone">Часовой пояс</option>
+                    <option value="currency">Валюта</option>
+                </select>
+                <label for="desc1">по убыванию?</label> 
+                <input type="checkbox" id="desc1" name="desc1">
+            </p>
+
+            <p>
+                <label for="sort2">Второй уровень:</label>
+                <select id="sort2" name="sort2">
+                    <option value="none">Нет</option>
+                    <option value="name">Название</option>
+                    <option value="continent">Континент</option>
+                    <option value="region">Регион</option>
+                    <option value="population">Население</option>
+                    <option value="area">Площадь</option>
+                    <option value="gdp">ВВП</option>
+                    <option value="climate">Климат</option>
+                    <option value="timezone">Часовой пояс</option>
+                    <option value="currency">Валюта</option>
+                </select>
+                <label for="desc2">по убыванию?</label> 
+                <input id="desc2" type="checkbox" name="desc2">
+            </p>
+
+            <p>
+                <label for="sort3">Третий уровень:</label>
+                <select id="sort3" name="sort3">
+                    <option value="none">Нет</option>
+                    <option value="name">Название</option>
+                    <option value="continent">Континент</option>
+                    <option value="region">Регион</option>
+                    <option value="population">Население</option>
+                    <option value="area">Площадь</option>
+                    <option value="gdp">ВВП</option>
+                    <option value="climate">Климат</option>
+                    <option value="timezone">Часовой пояс</option>
+                    <option value="currency">Валюта</option>
+                </select>
+                <label for="desc3">по убыванию?</label> 
+                <input id="desc3" type="checkbox" name="desc3">
+            </p>
+
+            <p>
+                <input type="button" id="btn_sort" value="Сортировать">
+            </p>
+        </form>
+    </details>
+
+    <br>
+
+    <table id="data_table" border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Континент</th>
+                <th>Регион</th>
+                <th>Столица</th>
+                <th>Площадь (кв.км)</th>
+                <th>Население (млн.чел)</th>
+                <th>ВВП на душу ($)</th>
+                <th>Климатический пояс</th>
+                <th>Часовой пояс (UTC)</th>
+                <th>Валюта</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Россия</td>
+                <td>Евразия</td>
+                <td>Восточная Европа</td>
+                <td>Москва</td>
+                <td>17125191</td>
+                <td>146.4</td>
+                <td>12200</td>
+                <td>Умеренный</td>
+                <td>UTC+3</td>
+                <td>рубль</td>
+            </tr>
+            <tr>
+                <td>Китай</td>
+                <td>Азия</td>
+                <td>Восточная Азия</td>
+                <td>Пекин</td>
+                <td>9596961</td>
+                <td>1411.7</td>
+                <td>12500</td>
+                <td>Умеренный</td>
+                <td>UTC+8</td>
+                <td>юань</td>
+            </tr>
+            <tr>
+                <td>США</td>
+                <td>Северная Америка</td>
+                <td>Северная Америка</td>
+                <td>Вашингтон</td>
+                <td>9833517</td>
+                <td>334.9</td>
+                <td>76300</td>
+                <td>Умеренный</td>
+                <td>UTC-5</td>
+                <td>доллар</td>
+            </tr>
+            <tr>
+                <td>Индия</td>
+                <td>Азия</td>
+                <td>Южная Азия</td>
+                <td>Нью-Дели</td>
+                <td>3287263</td>
+                <td>1428.6</td>
+                <td>2300</td>
+                <td>Тропический</td>
+                <td>UTC+5:30</td>
+                <td>рупия</td>
+            </tr>
+            <tr>
+                <td>Бразилия</td>
+                <td>Южная Америка</td>
+                <td>Южная Америка</td>
+                <td>Бразилиа</td>
+                <td>8515767</td>
+                <td>216.4</td>
+                <td>8900</td>
+                <td>Тропический</td>
+                <td>UTC-3</td>
+                <td>реал</td>
+            </tr>
+            <tr>
+                <td>Австралия</td>
+                <td>Австралия и Океания</td>
+                <td>Австралия и Новая Зеландия</td>
+                <td>Канберра</td>
+                <td>7692024</td>
+                <td>26.4</td>
+                <td>64000</td>
+                <td>Субтропический</td>
+                <td>UTC+10</td>
+                <td>доллар</td>
+            </tr>
+            <tr>
+                <td>Канада</td>
+                <td>Северная Америка</td>
+                <td>Северная Америка</td>
+                <td>Оттава</td>
+                <td>9984670</td>
+                <td>40.0</td>
+                <td>54000</td>
+                <td>Умеренный</td>
+                <td>UTC-5</td>
+                <td>доллар</td>
+            </tr>
+            <tr>
+                <td>Аргентина</td>
+                <td>Южная Америка</td>
+                <td>Южная Америка</td>
+                <td>Буэнос-Айрес</td>
+                <td>2780400</td>
+                <td>46.6</td>
+                <td>10600</td>
+                <td>Субтропический</td>
+                <td>UTC-3</td>
+                <td>песо</td>
+            </tr>
+            <tr>
+                <td>Казахстан</td>
+                <td>Евразия</td>
+                <td>Центральная Азия</td>
+                <td>Астана</td>
+                <td>2724900</td>
+                <td>19.8</td>
+                <td>11200</td>
+                <td>Умеренный</td>
+                <td>UTC+5</td>
+                <td>тенге</td>
+            </tr>
+            <tr>
+                <td>Алжир</td>
+                <td>Африка</td>
+                <td>Северная Африка</td>
+                <td>Алжир</td>
+                <td>2381741</td>
+                <td>45.6</td>
+                <td>4200</td>
+                <td>Субтропический</td>
+                <td>UTC+1</td>
+                <td>динар</td>
+            </tr>
+            <tr>
+                <td>Германия</td>
+                <td>Европа</td>
+                <td>Западная Европа</td>
+                <td>Берлин</td>
+                <td>357022</td>
+                <td>83.2</td>
+                <td>51200</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Франция</td>
+                <td>Европа</td>
+                <td>Западная Европа</td>
+                <td>Париж</td>
+                <td>551695</td>
+                <td>68.1</td>
+                <td>43600</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Великобритания</td>
+                <td>Европа</td>
+                <td>Северная Европа</td>
+                <td>Лондон</td>
+                <td>242495</td>
+                <td>67.7</td>
+                <td>47300</td>
+                <td>Умеренный</td>
+                <td>UTC+0</td>
+                <td>фунт</td>
+            </tr>
+            <tr>
+                <td>Италия</td>
+                <td>Европа</td>
+                <td>Южная Европа</td>
+                <td>Рим</td>
+                <td>301340</td>
+                <td>58.8</td>
+                <td>34100</td>
+                <td>Субтропический</td>
+                <td>UTC+1</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Испания</td>
+                <td>Европа</td>
+                <td>Южная Европа</td>
+                <td>Мадрид</td>
+                <td>505990</td>
+                <td>48.3</td>
+                <td>31800</td>
+                <td>Субтропический</td>
+                <td>UTC+1</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Япония</td>
+                <td>Азия</td>
+                <td>Восточная Азия</td>
+                <td>Токио</td>
+                <td>377975</td>
+                <td>124.4</td>
+                <td>39300</td>
+                <td>Субтропический</td>
+                <td>UTC+9</td>
+                <td>иена</td>
+            </tr>
+            <tr>
+                <td>Южная Корея</td>
+                <td>Азия</td>
+                <td>Восточная Азия</td>
+                <td>Сеул</td>
+                <td>100210</td>
+                <td>51.7</td>
+                <td>32400</td>
+                <td>Умеренный</td>
+                <td>UTC+9</td>
+                <td>вона</td>
+            </tr>
+            <tr>
+                <td>Индонезия</td>
+                <td>Азия</td>
+                <td>Юго-Восточная Азия</td>
+                <td>Джакарта</td>
+                <td>1904569</td>
+                <td>277.5</td>
+                <td>4700</td>
+                <td>Экваториальный</td>
+                <td>UTC+7</td>
+                <td>рупия</td>
+            </tr>
+            <tr>
+                <td>Вьетнам</td>
+                <td>Азия</td>
+                <td>Юго-Восточная Азия</td>
+                <td>Ханой</td>
+                <td>331212</td>
+                <td>99.4</td>
+                <td>4100</td>
+                <td>Субэкваториальный</td>
+                <td>UTC+7</td>
+                <td>донг</td>
+            </tr>
+            <tr>
+                <td>Таиланд</td>
+                <td>Азия</td>
+                <td>Юго-Восточная Азия</td>
+                <td>Бангкок</td>
+                <td>513120</td>
+                <td>71.8</td>
+                <td>7000</td>
+                <td>Субэкваториальный</td>
+                <td>UTC+7</td>
+                <td>бат</td>
+            </tr>
+            <tr>
+                <td>Египет</td>
+                <td>Африка</td>
+                <td>Северная Африка</td>
+                <td>Каир</td>
+                <td>1001450</td>
+                <td>112.7</td>
+                <td>3600</td>
+                <td>Тропический</td>
+                <td>UTC+2</td>
+                <td>фунт</td>
+            </tr>
+            <tr>
+                <td>Нигерия</td>
+                <td>Африка</td>
+                <td>Западная Африка</td>
+                <td>Абуджа</td>
+                <td>923768</td>
+                <td>223.8</td>
+                <td>2100</td>
+                <td>Экваториальный</td>
+                <td>UTC+1</td>
+                <td>найра</td>
+            </tr>
+            <tr>
+                <td>ЮАР</td>
+                <td>Африка</td>
+                <td>Южная Африка</td>
+                <td>Претория</td>
+                <td>1219090</td>
+                <td>60.4</td>
+                <td>6700</td>
+                <td>Субтропический</td>
+                <td>UTC+2</td>
+                <td>рэнд</td>
+            </tr>
+            <tr>
+                <td>Кения</td>
+                <td>Африка</td>
+                <td>Восточная Африка</td>
+                <td>Найроби</td>
+                <td>580367</td>
+                <td>55.1</td>
+                <td>2200</td>
+                <td>Экваториальный</td>
+                <td>UTC+3</td>
+                <td>шиллинг</td>
+            </tr>
+            <tr>
+                <td>Эфиопия</td>
+                <td>Африка</td>
+                <td>Восточная Африка</td>
+                <td>Аддис-Абеба</td>
+                <td>1104300</td>
+                <td>126.5</td>
+                <td>1000</td>
+                <td>Субэкваториальный</td>
+                <td>UTC+3</td>
+                <td>быр</td>
+            </tr>
+            <tr>
+                <td>Мексика</td>
+                <td>Северная Америка</td>
+                <td>Центральная Америка</td>
+                <td>Мехико</td>
+                <td>1972550</td>
+                <td>128.4</td>
+                <td>11400</td>
+                <td>Тропический</td>
+                <td>UTC-6</td>
+                <td>песо</td>
+            </tr>
+            <tr>
+                <td>Куба</td>
+                <td>Северная Америка</td>
+                <td>Карибский бассейн</td>
+                <td>Гавана</td>
+                <td>109884</td>
+                <td>11.2</td>
+                <td>9400</td>
+                <td>Тропический</td>
+                <td>UTC-5</td>
+                <td>песо</td>
+            </tr>
+            <tr>
+                <td>Колумбия</td>
+                <td>Южная Америка</td>
+                <td>Южная Америка</td>
+                <td>Богота</td>
+                <td>1141748</td>
+                <td>52.0</td>
+                <td>6600</td>
+                <td>Экваториальный</td>
+                <td>UTC-5</td>
+                <td>песо</td>
+            </tr>
+            <tr>
+                <td>Перу</td>
+                <td>Южная Америка</td>
+                <td>Южная Америка</td>
+                <td>Лима</td>
+                <td>1285216</td>
+                <td>34.3</td>
+                <td>7100</td>
+                <td>Экваториальный</td>
+                <td>UTC-5</td>
+                <td>соль</td>
+            </tr>
+            <tr>
+                <td>Чили</td>
+                <td>Южная Америка</td>
+                <td>Южная Америка</td>
+                <td>Сантьяго</td>
+                <td>756102</td>
+                <td>19.6</td>
+                <td>15300</td>
+                <td>Субтропический</td>
+                <td>UTC-4</td>
+                <td>песо</td>
+            </tr>
+            <tr>
+                <td>Швейцария</td>
+                <td>Европа</td>
+                <td>Западная Европа</td>
+                <td>Берн</td>
+                <td>41285</td>
+                <td>8.7</td>
+                <td>92100</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>франк</td>
+            </tr>
+            <tr>
+                <td>Швеция</td>
+                <td>Европа</td>
+                <td>Северная Европа</td>
+                <td>Стокгольм</td>
+                <td>450295</td>
+                <td>10.5</td>
+                <td>55800</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>крона</td>
+            </tr>
+            <tr>
+                <td>Норвегия</td>
+                <td>Европа</td>
+                <td>Северная Европа</td>
+                <td>Осло</td>
+                <td>385207</td>
+                <td>5.4</td>
+                <td>106000</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>крона</td>
+            </tr>
+            <tr>
+                <td>Финляндия</td>
+                <td>Европа</td>
+                <td>Северная Европа</td>
+                <td>Хельсинки</td>
+                <td>338424</td>
+                <td>5.5</td>
+                <td>50500</td>
+                <td>Умеренный</td>
+                <td>UTC+2</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Польша</td>
+                <td>Европа</td>
+                <td>Восточная Европа</td>
+                <td>Варшава</td>
+                <td>312696</td>
+                <td>37.8</td>
+                <td>18300</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>злотый</td>
+            </tr>
+            <tr>
+                <td>Саудовская Аравия</td>
+                <td>Азия</td>
+                <td>Западная Азия</td>
+                <td>Эр-Рияд</td>
+                <td>2149690</td>
+                <td>36.9</td>
+                <td>23100</td>
+                <td>Тропический</td>
+                <td>UTC+3</td>
+                <td>риял</td>
+            </tr>
+            <tr>
+                <td>Иран</td>
+                <td>Азия</td>
+                <td>Западная Азия</td>
+                <td>Тегеран</td>
+                <td>1648195</td>
+                <td>89.1</td>
+                <td>4100</td>
+                <td>Субтропический</td>
+                <td>UTC+3:30</td>
+                <td>риал</td>
+            </tr>
+            <tr>
+                <td>Турция</td>
+                <td>Евразия</td>
+                <td>Западная Азия</td>
+                <td>Анкара</td>
+                <td>783562</td>
+                <td>85.8</td>
+                <td>10600</td>
+                <td>Субтропический</td>
+                <td>UTC+3</td>
+                <td>лира</td>
+            </tr>
+            <tr>
+                <td>Пакистан</td>
+                <td>Азия</td>
+                <td>Южная Азия</td>
+                <td>Исламабад</td>
+                <td>881912</td>
+                <td>240.4</td>
+                <td>1600</td>
+                <td>Субтропический</td>
+                <td>UTC+5</td>
+                <td>рупия</td>
+            </tr>
+            <tr>
+                <td>Бангладеш</td>
+                <td>Азия</td>
+                <td>Южная Азия</td>
+                <td>Дакка</td>
+                <td>148460</td>
+                <td>172.9</td>
+                <td>2500</td>
+                <td>Субэкваториальный</td>
+                <td>UTC+6</td>
+                <td>така</td>
+            </tr>
+            <tr>
+                <td>Марокко</td>
+                <td>Африка</td>
+                <td>Северная Африка</td>
+                <td>Рабат</td>
+                <td>446550</td>
+                <td>37.8</td>
+                <td>3500</td>
+                <td>Субтропический</td>
+                <td>UTC+1</td>
+                <td>дирхам</td>
+            </tr>
+            <tr>
+                <td>Танзания</td>
+                <td>Африка</td>
+                <td>Восточная Африка</td>
+                <td>Додома</td>
+                <td>947300</td>
+                <td>67.4</td>
+                <td>1100</td>
+                <td>Субэкваториальный</td>
+                <td>UTC+3</td>
+                <td>шиллинг</td>
+            </tr>
+            <tr>
+                <td>ДР Конго</td>
+                <td>Африка</td>
+                <td>Центральная Африка</td>
+                <td>Киншаса</td>
+                <td>2344858</td>
+                <td>102.2</td>
+                <td>500</td>
+                <td>Экваториальный</td>
+                <td>UTC+1</td>
+                <td>франк</td>
+            </tr>
+            <tr>
+                <td>Новая Зеландия</td>
+                <td>Австралия и Океания</td>
+                <td>Австралия и Новая Зеландия</td>
+                <td>Веллингтон</td>
+                <td>268680</td>
+                <td>5.2</td>
+                <td>48800</td>
+                <td>Умеренный</td>
+                <td>UTC+12</td>
+                <td>доллар</td>
+            </tr>
+            <tr>
+                <td>Филиппины</td>
+                <td>Азия</td>
+                <td>Юго-Восточная Азия</td>
+                <td>Манила</td>
+                <td>300000</td>
+                <td>117.3</td>
+                <td>3600</td>
+                <td>Экваториальный</td>
+                <td>UTC+8</td>
+                <td>песо</td>
+            </tr>
+            <tr>
+                <td>Малайзия</td>
+                <td>Азия</td>
+                <td>Юго-Восточная Азия</td>
+                <td>Куала-Лумпур</td>
+                <td>330803</td>
+                <td>34.3</td>
+                <td>11900</td>
+                <td>Экваториальный</td>
+                <td>UTC+8</td>
+                <td>ринггит</td>
+            </tr>
+            <tr>
+                <td>Сингапур</td>
+                <td>Азия</td>
+                <td>Юго-Восточная Азия</td>
+                <td>Сингапур</td>
+                <td>728</td>
+                <td>5.6</td>
+                <td>82800</td>
+                <td>Экваториальный</td>
+                <td>UTC+8</td>
+                <td>доллар</td>
+            </tr>
+            <tr>
+                <td>Израиль</td>
+                <td>Азия</td>
+                <td>Западная Азия</td>
+                <td>Иерусалим</td>
+                <td>22072</td>
+                <td>9.7</td>
+                <td>54600</td>
+                <td>Субтропический</td>
+                <td>UTC+2</td>
+                <td>шекель</td>
+            </tr>
+            <tr>
+                <td>Греция</td>
+                <td>Европа</td>
+                <td>Южная Европа</td>
+                <td>Афины</td>
+                <td>131957</td>
+                <td>10.4</td>
+                <td>20800</td>
+                <td>Субтропический</td>
+                <td>UTC+2</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Австрия</td>
+                <td>Европа</td>
+                <td>Западная Европа</td>
+                <td>Вена</td>
+                <td>83871</td>
+                <td>9.1</td>
+                <td>52100</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Португалия</td>
+                <td>Европа</td>
+                <td>Южная Европа</td>
+                <td>Лиссабон</td>
+                <td>92212</td>
+                <td>10.3</td>
+                <td>25300</td>
+                <td>Субтропический</td>
+                <td>UTC+0</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Ирландия</td>
+                <td>Европа</td>
+                <td>Северная Европа</td>
+                <td>Дублин</td>
+                <td>70273</td>
+                <td>5.1</td>
+                <td>105400</td>
+                <td>Умеренный</td>
+                <td>UTC+0</td>
+                <td>евро</td>
+            </tr>
+            <tr>
+                <td>Чехия</td>
+                <td>Европа</td>
+                <td>Восточная Европа</td>
+                <td>Прага</td>
+                <td>78866</td>
+                <td>10.5</td>
+                <td>27600</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>крона</td>
+            </tr>
+            <tr>
+                <td>Венгрия</td>
+                <td>Европа</td>
+                <td>Восточная Европа</td>
+                <td>Будапешт</td>
+                <td>93030</td>
+                <td>9.7</td>
+                <td>19000</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>форинт</td>
+            </tr>
+            <tr>
+                <td>Румыния</td>
+                <td>Европа</td>
+                <td>Восточная Европа</td>
+                <td>Бухарест</td>
+                <td>238391</td>
+                <td>19.1</td>
+                <td>15600</td>
+                <td>Умеренный</td>
+                <td>UTC+2</td>
+                <td>лей</td>
+            </tr>
+            <tr>
+                <td>Нидерланды</td>
+                <td>Европа</td>
+                <td>Западная Европа</td>
+                <td>Амстердам</td>
+                <td>41543</td>
+                <td>17.6</td>
+                <td>57800</td>
+                <td>Умеренный</td>
+                <td>UTC+1</td>
+                <td>евро</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <div>
+        <p>&copy; Разработчик: Чекин Н.Е., группа Б9124-09.03.04</p>
+    </div>
+
+</body>
+</html>
