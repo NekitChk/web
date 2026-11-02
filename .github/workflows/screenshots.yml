@@ -29,7 +29,7 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Generate screenshots and README
-        run: node tools/generate-screenshots.mjs
+        run: node tools/screenshots.mjs
 
       - name: Commit generated files
         run: |
