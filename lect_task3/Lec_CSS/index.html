@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS: Комбинация классов</title>
+    <style>
+     body {
+         font-family: sans-serif;
+         background: #121214;
+         color: #e1e1e6;
+         padding: 20px;
+     }
+
+     .container {
+         max-width: 650px;
+         margin: 0 auto;
+         background: #202024;
+         padding: 30px;
+         border-radius: 8px;
+     }
+
+     h1 {
+         margin-top: 0;
+         color: #ff9800;
+         font-size: 1.6rem;
+         border-bottom: 2px solid #29292e;
+         padding-bottom: 10px;
+     }
+
+     .rules {
+         background: #29292e;
+         padding: 15px;
+         border-left: 4px solid #ff9800;
+         margin-bottom: 25px;
+         font-size: 0.9rem;
+         line-height: 1.6;
+     }
+
+     .sandbox {
+         background: #121214;
+         padding: 25px;
+         border-radius: 6px;
+         border: 2px dashed #323238;
+     }
+
+
+     .block {
+        display: block;
+     }
+
+     .inline-block {
+        display: inline-block;
+     }
+
+     .product-card {
+        background-color: #202024;
+        border: 1px solid #323238;
+        border-radius: 8px;
+        padding: 24px;
+     }
+
+     .top-content {
+        width: 100%;
+     }
+
+     .bold {
+        font-weight: bold;
+     }
+
+     .course-title {
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #5858dd;
+     }
+
+     .purchase-button {
+        float: right;
+        background-color: #ff9800;
+        color: #000000;
+        padding: 10px 16px;
+        border-radius: 4px;
+     }
+
+     .margin-right {
+        margin-right: 12px;
+     }
+
+     .margin-bottom {
+        margin-bottom: 12px;
+     }
+
+     .margin-bottom-large {
+        margin-bottom: 18px;
+     }
+
+     .tag {
+        background-color: #29292e;
+        color: #a8a8b3;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+     }
+
+     .price-old {
+        color: #7c7c8a;
+        text-decoration: line-through;
+     }
+
+     .current-price {
+        background-color: #04d361;
+        color: #ffffff;
+        padding: 5px 12px;
+        border-radius: 4px;
+     }
+
+     .text-red {
+        color: #ff0000;
+     }
+
+     .product-desc {
+        font-size: 13px;
+        color: #e1e1e6;
+     }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🧩 Задание: Мультиклассы и Блочная модель</h1>
+    
+    <div class="rules">
+        <strong>🚫 Условие:</strong> Разрешено использовать только теги <code>&lt;div&gt;</code> и <code>&lt;span&gt;</code>. Любые другие теги запрещены.
+        <br><br>
+        <strong>🛠️ Задание:</strong> Собрать карточку товара из «сырого» текста. Чтобы элементы встали на свои места, необходимо комбинировать несколько классов в одном теге через пробел (например: <code>class="class1 class2 class3"</code>).
+        <br><br>
+        <strong>Требования к верстке:</strong>
+        <ul>
+            <li>Вся карточка должна иметь рамку, скругления и внутренние отступы.</li>
+            <li>Кнопка «Купить» должна стоять в верхнем правом углу карточки, ровно по верхней линии заголовка.</li>
+            <li>Название товара должно четко отделяться от нижних элементов и не слипаться с ними.</li>
+            <li>Бейджи статуса («В наличии» и «🔥 Хит») должны стоять строго в один ряд, иметь аккуратные маленькие отступы и небольшой промежуток между собой.</li>
+            <li>Блок цен должен находиться на новой строке, но старая и новая цена должны стоять на одной горизонтальной линии. Под ценой должен быть физический отступ, чтобы описание не налипало сверху.</li>
+            <li>Текст описания должен идти отдельным блоком. Фраза «КОНЧАЕТСЯ!» должна загореться красным, но остаться строго внутри строки, не разбивая предложение.</li>
+        </ul>
+    </div>
+
+    <h2>Результат сборки:</h2>
+    <div class="sandbox">
+        <!-- НАЧАЛО ЗОНЫ РЕДАКТИРОВАНИЯ. ИСПОЛЬЗУЙ ТОЛЬКО DIV, SPAN И КОМБИНАЦИИ КЛАССОВ -->
+        <div class="product-card block">
+
+            <div class="top-content margin-bottom">
+                <div class="course-title inline-block bold">Курс «Архитектура CSS»</div>
+                <div class="purchase-button bold">Купить</div>
+            </div>
+
+            <div class="product-tags margin-bottom-large">
+                <div class="tag inline-block margin-right">В наличии</div>
+                <div class="tag inline-block">🔥 Хит</div>
+            </div>
+
+            <div class="product-price margin-bottom-large">
+                <div class="price-old inline-block margin-right">9 900 ₽</div>
+                <div class="current-price inline-block bold">5 400 ₽</div>
+            </div>
+
+            <div class="product-desc">
+                Внимание! Товар <span class="text-red bold">КОНЧАЕТСЯ!</span> Доступно всего 3 места со скидкой.
+            </div>
+
+        </div>
+        
+
+        <!-- КОНЕЦ ЗОНЫ РЕДАКТИРОВАНИЯ -->
+    </div>
+</div>
+
+</body>
+</html>
