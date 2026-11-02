@@ -130,8 +130,7 @@ try {
       );
 
 
-      const readmeContent = `# Лабораторная работа
-      ![Скриншот лабораторной работы](./screenshot.png)`;
+      const readmeContent = `# Лабораторная работа ![Скриншот лабораторной работы](./screenshot.png)`;
 
 
       await writeFile(readmePath, readmeContent, 'utf8');
