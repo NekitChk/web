@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Страны мира</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Страны мира</h1>
+        <form class="search" id="search" role="search">
+            <input type="search" id="query" placeholder="Найти страну" required>
+            <button type="submit">Найти</button>
+        </form>
+    </header>
+
+    <nav class="menu">
+        <a class="menu-item active" href="#">Главная</a>
+        <a class="menu-item" href="#">Страны</a>
+        <a class="menu-item" href="#">Япония</a>
+        <a class="menu-item" href="#">Европа</a>
+    </nav>
+
+    <main class="content">
+        <div class="gallery">
+            <div class="gallery-column">
+                <img src="images/japan.png" alt="Japan">
+                <img src="images/canada.png" alt="Canada">
+            </div>
+            <div class="gallery-column ">
+                <img class="short-flag" src="images/italy.png" alt="Italy">
+                <img src="images/iceland.png" alt="Iceland">
+            </div>
+            <div class="gallery-column">
+                <img src="images/france.png" alt="France">
+                <img src="images/brazil.png" alt="Brazil">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-column">
+                <div class="countries">
+                    <article class="country">
+                        <img src="images/japan.png" alt="Japan">
+                        <h2>Япония</h2>
+                        <p>Столица — Токио</p>
+                        <a class="more-button" href="#">Подробнее »</a>
+                    </article>
+                    <article class="country" >
+                        <img src="images/canada.png" alt="Canada">
+                        <h2>Канада</h2>
+                        <p>Столица — Оттава</p>
+                        <a class="more-button" href="#">Подробнее »</a>
+                    </article>
+                    <article class="country">
+                        <img src="images/iceland.png" alt="Iceland">
+                        <h2>Исландия</h2>
+                        <p>Столица — Рейкьявик</p>
+                        <a class="more-button" href="#">Подробнее »</a>
+                    </article>
+                    <article class="country">
+                        <img src="images/italy.png" alt="Italy">
+                        <h2>Италия</h2>
+                        <p>Столица — Рим</p>
+                        <a class="more-button" href="#">Подробнее »</a>
+                    </article>
+                    <article class="country">
+                        <img src="images/brazil.png" alt="Brazil">
+                        <h2>Бразилия</h2>
+                        <p>Столица — Бразилиа</p>
+                        <a class="more-button" href="#">Подробнее »</a>
+                    </article>
+                </div>
+
+                <article class="article">
+                    <h2>Франция и Исландия</h2>
+                    <div class="article-body">
+                        <p class="article-intro">Франция — страна в Западной Европе со столицей в Париже. Она известна архитектурой, музеями и кухней. Среди её символов — Эйфелева башня, Лувр и лавандовые поля Прованса.</p>
+                        <div class="article-image">
+                            <img src="images/france.png" alt="France">
+                        </div>
+                        <div class="article-text">
+                            <p>Исландия — островная страна в северной части Атлантики. Её столица — Рейкьявик. Вулканы, ледники, водопады и горячие источники создают необычные природные пейзажи.</p>
+                            <a class="more-link" href="#">Подробнее »</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="side-column">
+                <article class="side-card">
+                    <div class="card-text">
+                        <div class="card-description">
+                            <h2>Италия</h2>
+                            <p>Италия находится на юге Европы. Её столица — Рим, где сохранились памятники античности.</p>
+                        </div>
+                        <a class="more-link" href="#">Подробнее »</a>
+                    </div>
+                    <div class="card-image">
+                        <img src="images/italy.png" alt="Italy">
+                    </div>
+                </article>
+                <article class="side-card">
+                    <div class="card-text">
+                        <div class="card-description">
+                            <h2>Бразилия</h2>
+                            <p>Бразилия — крупнейшая страна Южной Америки. Её столица — Бразилиа, а официальный язык — португальский. Страна известна лесами Амазонии, карнавалами и футболом.</p>
+                        </div>
+                        <a class="more-link" href="#">Подробнее »</a>
+                    </div>
+                    <div class="card-image">
+                        <img src="images/brazil.png" alt="Brazil">
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div>Чекин Н.Е. Б9124-09.03.04(5)</div>
+    </footer>
+</body>
+</html>
